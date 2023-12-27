@@ -1,4 +1,4 @@
-package com.zghc.train.member.aspect;
+package com.zghc.train.common.aspect;
 
 import cn.hutool.core.util.RandomUtil;
 import com.alibaba.fastjson2.JSON;
@@ -20,8 +20,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.util.Random;
 
 @Aspect
 @Component
