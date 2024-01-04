@@ -1,7 +1,10 @@
 package com.zghc.train.member.controller;
 
+import com.zghc.train.common.resp.CommonResp;
+import com.zghc.train.member.req.MemberRegisterReq;
 import com.zghc.train.member.service.MemberService;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,13 +24,16 @@ public class MemberController {
     MemberService memberService;
 
     @GetMapping("/count")
-    public Integer count() {
-        return memberService.count();
+    public CommonResp<Integer> count() {
+        int count = memberService.count();
+        return new CommonResp<>(count);
+
     }
 
     @PostMapping("/register")
-    public Long register(String mobile) {
-        return memberService.register(mobile);
+    public CommonResp<Long> register(@Valid MemberRegisterReq Req) {
+        long register = memberService.register(Req);
+        return new CommonResp<>(register);
     }
 
 }

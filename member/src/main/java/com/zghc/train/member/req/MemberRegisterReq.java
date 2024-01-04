@@ -1,5 +1,7 @@
 package com.zghc.train.member.req;
 
+import jakarta.validation.constraints.NotBlank;
+
 /**
  * @Author Lizl
  * @Description
@@ -7,6 +9,7 @@ package com.zghc.train.member.req;
  * @Version 1.0.0
  */
 public class MemberRegisterReq {
+    @NotBlank(message = "【手机号】不能为空")
     private String mobile;
 
     public String getMobile() {
